@@ -1,8 +1,10 @@
 const express = require('express')
+const cors = require('cors')
 const mongoose = require('mongoose')
 const url = 'mongodb+srv://user:user@cluster0.cuupicg.mongodb.net/?retryWrites=true&w=majority'
 
 const app = express()
+app.use(cors())
 
 mongoose.connect(url, {useNewUrlParser:true,useUnifiedTopology: true})
 const con = mongoose.connection
